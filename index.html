@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>Flower Shop Sales Data</title>
+    <link rel="stylesheet" type="text/css" href="css/flowerShop.css">
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="chartContainer">
+        <div class="refreshButton" title="Refresh data"></div>
+        <canvas id="graphSpace" width="1024" height="300"></canvas>
+        <div class="graphDetails">
+            <!--graph info-->
+            <div class="graphInfo">
+                Flower sales per day
+            </div>
+            <!--legend-->
+            <div class="graphLegend">
+                <div class='legendEntry'>
+                    <!--sold-->
+                    <div class="legendIcon-sold"></div>
+                    <label class="legendLabel">Sold</label>
+                </div>
+                <div class='legendEntry'>
+                    <!--unsold-->
+                    <div class="legendIcon-unsold"></div>
+                    <label class="legendLabel">Unsold</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var graphCanvas = document.getElementById('graphSpace');
+            $('.refreshButton').click(function() {
+                clearChart(graphCanvas);
+                createChart(graphCanvas);   
+            });
+            createChart(graphCanvas);
+        });
+    </script>
+</body>
+</html>
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->
